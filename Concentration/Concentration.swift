@@ -11,6 +11,8 @@ import Foundation
 class Concentration {
     private(set) var cards = [Card]()
     
+    private(set) var numberOfPairsOfCards: Int
+    
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             var foundIndex: Int?
@@ -43,6 +45,7 @@ class Concentration {
                 if cards[matchIndex].identifier == cards[index].identifier {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
+                    numberOfPairsOfCards -= 1
                 }
                 
                 cards[index].isFaceUp = true
@@ -54,6 +57,7 @@ class Concentration {
     
     init(numberofPairsOfCards: Int) {
         assert(numberofPairsOfCards > 0, "Concentration.init(\(numberofPairsOfCards)): you must have at least one pair of cards")
+        self.numberOfPairsOfCards = numberofPairsOfCards
         
         for _ in 0..<numberofPairsOfCards {
             let card = Card()

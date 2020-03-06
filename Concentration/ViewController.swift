@@ -32,6 +32,11 @@ class ViewController: UIViewController {
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
         }
+        
+        // every pairs is matched
+        if game.numberOfPairsOfCards == 0 {
+            showWinnerDialog()
+        }
     }
     
     private func updateViewFromModel() {
@@ -50,6 +55,35 @@ class ViewController: UIViewController {
         }
     }
 
+    private func showWinnerDialog() {
+        let alert = UIAlertController(title: "You are a winner!!", message: "Won the game in \(flipCount) steps. That's a perfect score. \n Do you wanna start a new game?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "New game", style: .default, handler: { _ in
+            self.resetGame()
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { _ in
+            // bad solution
+            exit(0)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // this is a nasty solution
+    private func resetGame() {
+        flipCount = 0
+        
+        for button in cardButtons {
+            button.setTitle("", for: .normal)
+            button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+            button.isEnabled = true
+        }
+        
+        game = Concentration(numberofPairsOfCards: numberOfPairsOfCards)
+        
+        emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎", "👽"]
+    }
+    
     private var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎", "👽"]
 
     private var emoji = [Int: String]()

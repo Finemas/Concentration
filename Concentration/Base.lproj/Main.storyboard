@@ -23,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="A5Q-uj-0ZY">
-                                <rect key="frame" x="16" y="44" width="382" height="312"/>
+                                <rect key="frame" x="16" y="60" width="382" height="312"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="G1T-wb-B85">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="72"/>
@@ -183,7 +183,7 @@
                             <constraint firstItem="9cd-im-WWt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EQT-c9-mSx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A5Q-uj-0ZY" secondAttribute="trailing" constant="16" id="HEu-Dw-EV9"/>
                             <constraint firstItem="A5Q-uj-0ZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qw3-v5-CnG"/>
-                            <constraint firstItem="A5Q-uj-0ZY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wI9-1G-oU4"/>
+                            <constraint firstItem="A5Q-uj-0ZY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="wI9-1G-oU4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

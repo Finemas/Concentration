@@ -81,10 +81,10 @@ class ViewController: UIViewController {
         
         game = Concentration(numberofPairsOfCards: numberOfPairsOfCards)
         
-        emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎", "👽"]
+        emojiChoices = ["🦇", "🧛🏻", "🧟", "😈", "🎃", "👻", "🍫", "🔪", "🕷", "👽"]
     }
     
-    private var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎", "👽"]
+    private var emojiChoices = ["🦇", "🧛🏻", "🧟", "😈", "🎃", "👻", "🍫", "🔪", "🕷", "👽"]
 
     private var emoji = [Int: String]()
     

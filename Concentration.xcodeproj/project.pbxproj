@@ -14,6 +14,7 @@
 		16145CA22410E8FA00E62860 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16145CA02410E8FA00E62860 /* Main.storyboard */; };
 		16145CA42410E8FC00E62860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16145CA32410E8FC00E62860 /* Assets.xcassets */; };
 		16145CA72410E8FC00E62860 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16145CA52410E8FC00E62860 /* LaunchScreen.storyboard */; };
+		163C6CA5241B9506001B8C95 /* LoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C6CA4241B9506001B8C95 /* LoggingViewController.swift */; };
 		16D297272411067500AD63C6 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D297262411067500AD63C6 /* Concentration.swift */; };
 		16D297292411072A00AD63C6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D297282411072A00AD63C6 /* Card.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		16145CA32410E8FC00E62860 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16145CA62410E8FC00E62860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16145CA82410E8FC00E62860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		163C6CA4241B9506001B8C95 /* LoggingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingViewController.swift; sourceTree = "<group>"; };
 		16D297262411067500AD63C6 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		16D297282411072A00AD63C6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 				16145CA02410E8FA00E62860 /* Main.storyboard */,
 				16145CAE2410EA0200E62860 /* Supporting files */,
 				16145CA82410E8FC00E62860 /* Info.plist */,
+				163C6CA4241B9506001B8C95 /* LoggingViewController.swift */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16145C9F2410E8FA00E62860 /* ConcentrationViewController.swift in Sources */,
+				163C6CA5241B9506001B8C95 /* LoggingViewController.swift in Sources */,
 				16D297272411067500AD63C6 /* Concentration.swift in Sources */,
 				16D297292411072A00AD63C6 /* Card.swift in Sources */,
 				16145C9B2410E8FA00E62860 /* AppDelegate.swift in Sources */,

@@ -69,7 +69,7 @@ class ConcentrationViewController: LoggingViewController {
                     button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
                 } else {
                     button.setTitle("", for: .normal)
-                    button.backgroundColor = card.isMatched ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0) : #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
+                    button.backgroundColor = card.isMatched ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0) : #colorLiteral(red: 0.01568627451, green: 0.2, blue: 1, alpha: 1)
                     button.isEnabled = !card.isMatched
                 }
             }

@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ConcentrationViewController: UIViewController {
+class ConcentrationViewController: LoggingViewController {
 
+    override var vcLoggingName: String {
+        return "Game"
+    }
+    
     @IBOutlet private weak var flipCountLabel: UILabel! {
         didSet {
             updateFlipCountLabel()

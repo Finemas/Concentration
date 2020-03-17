@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ConcentrationThemeChooserViewController: LoggingViewController, UISplitViewControllerDelegate {
-    
-    override var vcLoggingName: String {
-        return "ThemeChooser"
-    }
+class ConcentrationThemeChooserViewController: UIViewController, UISplitViewControllerDelegate {
+
+//    override var vcLoggingName: String {
+//        return "ThemeChooser"
+//    }
     
     let themes = [
         "Sports": "🏀⚾️🎾🏐🏈🎱🏓🏂🎳⛳️🛹🧘🥏",

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ConcentrationViewController: LoggingViewController {
+class ConcentrationViewController: UIViewController {
 
-    override var vcLoggingName: String {
-        return "Game"
-    }
+//    override var vcLoggingName: String {
+//        return "Game"
+//    }
     
     @IBOutlet private weak var flipCountLabel: UILabel! {
         didSet {
@@ -21,6 +21,15 @@ class ConcentrationViewController: LoggingViewController {
     }
     
     @IBOutlet private var cardButtons: [UIButton]!
+    
+    private var visibleCardButtons: [UIButton]! {
+        return cardButtons?.filter { !$0.superview!.isHidden }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateViewFromModel()
+    }
     
     private(set) var flipCount = 0 {
         didSet {
@@ -34,20 +43,27 @@ class ConcentrationViewController: LoggingViewController {
             .strokeColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         ]
         
-        let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
+        let attributedString = NSAttributedString(
+            string: traitCollection.verticalSizeClass == .compact ? "Flips\n \(flipCount)" : "Flips: \(flipCount)",
+            attributes: attributes)
         
         flipCountLabel.attributedText = attributedString
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateFlipCountLabel()
     }
     
     private lazy var game = Concentration(numberofPairsOfCards: numberOfPairsOfCards)
 
     var numberOfPairsOfCards: Int {
-        return (cardButtons.count + 1) / 2
+        return (visibleCardButtons.count + 1) / 2
     }
     
     @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
-        if let cardNumber = cardButtons.firstIndex(of: sender) {
+        if let cardNumber = visibleCardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
         }
@@ -59,9 +75,9 @@ class ConcentrationViewController: LoggingViewController {
     }
     
     private func updateViewFromModel() {
-        if cardButtons != nil {
-            for index in cardButtons.indices {
-                let button = cardButtons[index]
+        if visibleCardButtons != nil {
+            for index in visibleCardButtons.indices {
+                let button = visibleCardButtons[index]
                 let card = game.cards[index]
                 
                 if card.isFaceUp {
@@ -94,7 +110,7 @@ class ConcentrationViewController: LoggingViewController {
     private func resetGame() {
         flipCount = 0
         
-        for button in cardButtons {
+        for button in visibleCardButtons {
             button.setTitle("", for: .normal)
             button.backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
             button.isEnabled = true
